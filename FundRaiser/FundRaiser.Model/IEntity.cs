@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace FundRaiser.Model
 {
-    public class Class1
+    public interface IEntity
     {
+        long Id { get; set; }
+        string name { get; set; }
     }
 }
