@@ -11,6 +11,6 @@ namespace FundRaiser.Model
     /// </summary>
     class Funder:Entity
     {
-
+        
     }
 }

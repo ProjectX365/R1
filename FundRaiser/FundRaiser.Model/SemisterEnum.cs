@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FundRaiser.DAL
+namespace FundRaiser.Model
 {
-    public class Class1
+    public enum SemisterEnum
     {
+        FALL,
+        SPRING,
+        SUMMER,
+        WINTER
     }
 }

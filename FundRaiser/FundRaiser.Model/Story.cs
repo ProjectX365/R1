@@ -10,7 +10,7 @@ namespace FundRaiser.Model
     /// class represents datamodel of a story.
     /// These stories will be displayed in the home page. i.e student story, school story, Funder story. 
     /// </summary>
-    public class Story : FundRaiser.Model.IStory
+    public class Story :IStory
     {
         public EntityTypes EntityType { get; set; }
         public string Description { get; set; }
