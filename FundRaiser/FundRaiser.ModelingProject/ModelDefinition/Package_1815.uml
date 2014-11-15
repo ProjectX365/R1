@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="25a0cfd1-2788-4b0f-845e-c89b2f000d65"
   name="Model"
@@ -532,7 +532,6 @@
       <class
         Id="8902c5a3-1c88-4d73-86d3-6e182a88d58f"
         name="Fund"
-        visibility="Package"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -784,6 +783,216 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="72dbec72-3cc6-457f-bbae-42e3b8d7667f"
+            isDerived="false"
+            sourceEndRoleName="Fund"
+            targetEndRoleName="FundRequestId"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ea27866b-673f-4340-acd1-2fadc6bb40f1"
+              LastKnownName="Int64"
+              LastKnownLocation="Package3_1813.uml" />
+            <description>Property FundRequestId references type Int64.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1b0aef4e-c61c-4190-b3fb-694a1143ee5a"
+                  name="Fund"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="3a1f90cb-d07d-45cd-bf2d-29253d3435ec"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="b0d0518d-dec9-4a06-ba09-066ffe53b00e"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="15c14493-6fac-4c0e-a4f8-97b9914240b8"
+                  name="FundRequestId"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="f7073db7-edfd-4bae-812e-28e9e172e466"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="0c45eb42-82aa-41b5-a232-ac894843a8b1"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="5391da7c-b4b1-49d8-87db-7426a26d3d12"
+            isDerived="false"
+            sourceEndRoleName="Fund"
+            targetEndRoleName="FunderId"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="ea27866b-673f-4340-acd1-2fadc6bb40f1"
+              LastKnownName="Int64"
+              LastKnownLocation="Package3_1813.uml" />
+            <description>Property FunderId references type Int64.</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3bc76238-bb44-4d3f-ac31-ea8400445901"
+                  name="Fund"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="d8c9ce3f-15d6-44f5-b313-38ad737e73cf"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="f2df9246-074f-4641-b4dd-20bd8540f351"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a44a595c-e521-41a8-9e69-9de4ae01e9da"
+                  name="FunderId"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="150ec6af-7b3b-43cf-bff2-354eadb38f35"
+                      name="Lower"
+                      value="1" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="ef9e9413-c84b-43ab-a6db-6eb9be218910"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="914bed6e-779b-4c6f-9423-3189a329a6e2"
+            isDerived="false"
+            sourceEndRoleName="Fund"
+            targetEndRoleName="FundRequestInfo"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="7a298146-50be-4754-afb4-afccacdce793"
+              LastKnownName="FundRequestInfo"
+              LastKnownLocation="Package_1815.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="48f9fd4f-eadb-4bec-a6bc-dd5a20278f30"
+                  name="Fund"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d5733191-30c8-477f-b907-c67cb0a5f55f"
+                  name="FundRequestInfo"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="00c963d7-7ceb-4927-a9fb-67d951618946"
+            isDerived="false"
+            sourceEndRoleName="Fund"
+            targetEndRoleName="Funder"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="0b3c7f09-aa57-44d0-8cf7-7f621b0fb121"
+              LastKnownName="Funder"
+              LastKnownLocation="Package_1815.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e3808cc2-f169-4835-880f-d72e0623bde3"
+                  name="Fund"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="91b37724-c55b-453e-8a31-ff7cbe6554eb"
+                  name="Funder"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property
@@ -1026,10 +1235,170 @@
                 LastKnownLocation="Package_1815.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="30ff496d-fd97-486e-83cb-e7f61784cccb"
+            name="FundRequestId"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="77ab2353-6942-48f8-8d65-7705ea0f4f7d"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FE:%2FProjects%2F365%2FR1%2FFundRaiser%2FFundRaiser.Model%2Fbin%2FDebug%2FFundRaiser.Model.dll Namespace%3DFundRaiser.Model Type%3DFund Member%3DFundRequestId"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c39da331-a88d-4f8e-b2b8-bac02a05dc5f"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4e5f4f3a-5f89-4c71-bddd-8df4a68a62d9">
+                    <propertyInstance
+                      Id="ffc607a1-7328-4a2f-9426-c4b2570d3025"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9ee6756a-2307-4c40-8084-272e9dbc8068">
+                    <propertyInstance
+                      Id="1163664a-83e0-46ff-8c46-a539d978d42d"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b4eaab6c-a51e-48cf-9c1d-7a878bb096af">
+                    <propertyInstance
+                      Id="c6eb0a0c-e0f2-4dd2-b1cf-994e29120613"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="348b9ee0-7880-460e-a6f7-21ca6583a9a0">
+                    <propertyInstance
+                      Id="b73315f1-64b0-456f-8738-d44133dfe7aa"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="35ff4d68-f536-4971-8765-e2f6f8fe0ac8">
+                    <propertyInstance
+                      Id="71139cfb-b1f9-4c61-ace7-af29a6bf7d32"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fbb5df1e-1bc5-44fb-9bdb-01e19021c2e9">
+                    <propertyInstance
+                      Id="aa552054-e4de-409a-9c02-98b18cdfe258"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b59e1211-180d-415e-b66f-19388fa27f96">
+                    <propertyInstance
+                      Id="fcb7878b-ea64-48ef-a150-807a34021e03"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="ea27866b-673f-4340-acd1-2fadc6bb40f1"
+                LastKnownName="Int64"
+                LastKnownLocation="Package3_1813.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="9df77e8b-db79-4da8-a8c8-12be8af8b08f"
+            name="FunderId"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="f65d8aec-42c7-4806-9860-02e607cf73f2"
+                handle="viewcode://./CodeSchema_Property?Assembly%3Dfile:%2F%2F%2FE:%2FProjects%2F365%2FR1%2FFundRaiser%2FFundRaiser.Model%2Fbin%2FDebug%2FFundRaiser.Model.dll Namespace%3DFundRaiser.Model Type%3DFund Member%3DFunderId"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="0fc3d41d-d2c3-4e3b-8464-8b401a98eb00"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d99c18bb-9d14-40be-9299-caf1d9a616ec">
+                    <propertyInstance
+                      Id="48fff7f5-8d2e-4c1d-896d-6fb335583369"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c27f655a-609b-46e5-b895-0127cc98ced8">
+                    <propertyInstance
+                      Id="649d4ce2-a254-43e1-9050-1733855ab762"
+                      name="Get"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="342df5ee-a76b-4fc6-89bc-1f19159bcc54">
+                    <propertyInstance
+                      Id="8e47dfe7-3a69-462c-b625-b233f939e883"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4f1af80a-c96d-4add-b40e-309bacd508fa">
+                    <propertyInstance
+                      Id="d2625da2-923a-46cd-8fd8-ce8d547187cb"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="025a7e69-690f-4269-8f7b-abd4b56a9804">
+                    <propertyInstance
+                      Id="2b1cf2ab-9d36-4a53-8ea3-0440a50a965d"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9478fbd2-2643-4c36-9a42-876dd963aae8">
+                    <propertyInstance
+                      Id="c93c4d9f-34b9-418d-92bd-c86fd18c3168"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5bf3c159-560d-406c-8cc0-5ed378de6078">
+                    <propertyInstance
+                      Id="841e46ac-f726-445d-8846-33315e568f98"
+                      name="Set"
+                      value="public" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="ea27866b-673f-4340-acd1-2fadc6bb40f1"
+                LastKnownName="Int64"
+                LastKnownLocation="Package3_1813.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="e5998d6f-0e8b-4665-8273-c9e268f71840"
+            Id="52fb74e8-beab-46ed-a53c-9aeb379fcf55"
             name="Fund"
             isLeaf="false"
             isStatic="false"
@@ -1038,54 +1407,54 @@
             isQuery="false">
             <referencesInternal>
               <reference
-                Id="24264edb-6567-45d2-9ea3-ccd32c908861"
+                Id="e6372d3f-3d32-4371-88f6-0d9295e1c61b"
                 handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FE:%2FProjects%2F365%2FR1%2FFundRaiser%2FFundRaiser.Model%2Fbin%2FDebug%2FFundRaiser.Model.dll Namespace%3DFundRaiser.Model Type%3DFund Member%3D.ctor"
                 tag="ViewCode" />
             </referencesInternal>
             <appliedStereotypesInternal>
               <stereotypeInstance
-                Id="91ab84ea-6c3f-4a98-a933-51c2c42e583a"
+                Id="611a09b1-5227-4c49-8798-078002e3c1dd"
                 name="method"
                 profile="CSharpProfile">
                 <propertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="52162894-3e1e-4d67-bce1-06d5bfad416d">
+                    Id="3f067ca1-3d97-4153-8e2a-debf87bd8d93">
                     <propertyInstance
-                      Id="babee3d0-ea4e-430f-bf99-be5982aaf6dc"
+                      Id="ec35b765-2e9e-4981-b947-ede4dcf8737b"
                       name="ClrAttributes" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="53ac5131-3b7c-4b38-a148-984cafb206fe">
+                    Id="956a7f59-db59-4fc3-b552-e89910773672">
                     <propertyInstance
-                      Id="74a54b48-abc8-4cd4-a8a7-30a326cac2bc"
+                      Id="25f3aa01-845f-458e-95d9-2284de9e2b01"
                       name="IsPartial"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="39f3e819-6b2c-4aaa-a913-da3d5b09e0cc">
+                    Id="6c953f46-8b39-4cde-8f3e-99f19ea783aa">
                     <propertyInstance
-                      Id="5bbd004e-7ff8-4894-b33f-3b6dad79783b"
+                      Id="95bb955e-a17a-4b52-bed7-554581401970"
                       name="IsUnsafe"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="c1510335-5a44-46a2-8d17-bdf6f6a2ad8d">
+                    Id="1e81a5be-81ce-475c-939c-53bc3794f3bf">
                     <propertyInstance
-                      Id="34b5a6bf-a0a3-48dd-824a-184019f89eb2"
+                      Id="92e1dea6-3443-463c-816f-7906f386f461"
                       name="Inheritance"
                       value="none" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="0ccb43c0-2b28-41dc-b576-5a6331b75198">
+                    Id="087450c0-c4b1-455f-8a4f-078d36e4cc6c">
                     <propertyInstance
-                      Id="202491bd-88ad-4716-b27c-a3e9cd95a30d"
+                      Id="85ed0396-65cc-4a59-ac36-a311356f9c3c"
                       name="PackageVisibility"
                       value="internal" />
                   </stereotypeInstanceHasPropertyInstances>
                   <stereotypeInstanceHasPropertyInstances
-                    Id="84472c78-0a84-443f-8ad5-6aa2c3bf4222">
+                    Id="7629a82f-76fd-49be-ae05-39769bb14644">
                     <propertyInstance
-                      Id="b28bfce1-4b40-423b-b66d-025b0965b519"
+                      Id="5063532f-ed1d-48ee-8e95-a2f21d1793e4"
                       name="params"
                       value="false" />
                   </stereotypeInstanceHasPropertyInstances>

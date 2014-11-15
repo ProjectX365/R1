@@ -3,12 +3,18 @@
     /// <summary>
     /// Class representing fund 
     /// </summary>
-    class Fund
+    public class Fund
     {
         /// <summary>
-        /// Fund ID. 
+        /// Fund ID.- internal unique id 
         /// </summary>
         public long FundId { get; set; }
+
+        //Id - where the money is from
+        public long FunderId { get; set; }
+
+        //RequestId - where the money is going to 
+        public long FundRequestId { get; set; }
 
         /// <summary>
         /// Fund Amount. 

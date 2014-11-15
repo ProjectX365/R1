@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace FundRaiser.Model
 {
-    /// <summary>
-    /// Class represents Data Model for Funder Actor
-    /// </summary>
-    public class Funder:Entity
+    public class SystemAdmin: Entity
     {
-        
+       
     }
 }

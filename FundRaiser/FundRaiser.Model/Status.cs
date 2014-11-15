@@ -10,7 +10,7 @@ namespace FundRaiser.Model
     /// <summary>
     /// class represent student status on how they use fund. 
     /// </summary>
-    class Status
+    public class Status
     {
         /// <summary>
         /// Student Id

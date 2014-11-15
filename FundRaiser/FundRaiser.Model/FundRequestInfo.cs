@@ -9,7 +9,7 @@ namespace FundRaiser.Model
     /// <summary>
     ///  class represent all the information that needs to be submitted during Fund request. 
     /// </summary>
-    class FundRequestInfo
+    public class FundRequestInfo
     {
         /// <summary>
         /// Fund request Info Id. 
@@ -56,6 +56,8 @@ namespace FundRaiser.Model
         /// Fund Requested semister. 
         /// </summary>
         public SemisterEnum Semister { get; set; }
+
+        public bool IsApprove { get; set; }
 
     }
 }
