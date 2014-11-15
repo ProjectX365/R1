@@ -15,5 +15,8 @@ namespace FundRaiser.Model
 
         string StudyYear { get; set; }
 
+        //Over all GPA
+        float GPA { get; set; }
+
     }
 }

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="c1c6779d-512a-4c8f-affd-62ad6a46507e" name="Funder" linkedPackageId="79b7c37a-1d0c-4f60-adb3-ecd979b66a68" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="cdb2c9e0-6f7a-449c-885a-ebcf33686bdf" name="Funder" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="030d1f77-3208-4d3f-b913-916b69fa5fa8" />
+        <targetEnds>
+          <association Id="f852a6af-86bd-4cc9-8050-d6f4f02393f4" isDerived="false" sourceEndRoleName="Funder" targetEndRoleName="Create Account" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="ec4d339f-31b7-4ae2-a4c2-027ffaaa7ca4" LastKnownName="Create Account1" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d6dac224-0b21-41a6-8ca3-97ff4e569184" name="Funder" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d7a5536c-ff20-4183-95b6-c459f33c3a09" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0189c424-4731-4218-aa10-b8b19e6f900e" name="Create Account" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b4b63c0f-1b99-4891-9267-f746bd5822f9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="59651894-cdcb-47ef-a324-f49f4992bc8f" />
+          </association>
+          <association Id="bcd88d16-b48a-42e3-8338-28d0e250842f" isDerived="false" sourceEndRoleName="Funder" targetEndRoleName="Add fund" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="7a95471c-89c3-4082-90d4-ffd9fc090d4a" LastKnownName="Add fund" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f26b99e6-d09f-4e55-bebb-a59056e930a3" name="Funder" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="36c9c75d-ac4b-46c5-a433-490543a6b3bd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9c869fc0-7605-42fe-92c6-e2768f456fa8" name="Add fund" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="488dfeda-6a45-45a1-b79b-f352bf637109" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2b9cc5f0-de78-4bb8-b031-3ab425eee718" />
+          </association>
+          <association Id="03b32b74-6081-4eb4-9781-d3e323f53a15" isDerived="false" sourceEndRoleName="Funder" targetEndRoleName="Select student(s)" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="bf979486-a2ee-4d55-b2d1-0e6af268ed71" LastKnownName="Select student(s)" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="99963d10-764a-487b-a0a8-2bef2f8a6976" name="Funder" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d59e5afb-9898-461b-9dcc-40f5e348dde2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b1bc50ef-8a82-48a6-90bf-acf3ff4a1df0" name="Select student(s)" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e68006a6-f0d6-41df-8c29-2cdfae363192" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="014d9fb2-fac6-4af1-9399-0e3c9b6b92f5" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ec4d339f-31b7-4ae2-a4c2-027ffaaa7ca4" name="Create Account1" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="bdeeb8e6-ead3-425c-b1a9-513625c16f77" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="7a95471c-89c3-4082-90d4-ffd9fc090d4a" name="Add fund" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8aa2fc3a-60fd-4709-b04c-865fb8f0ed5c" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="bf979486-a2ee-4d55-b2d1-0e6af268ed71" name="Select student(s)" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="909668f7-b7b2-42a5-a492-4e67ae0e9bb9" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="79b7c37a-1d0c-4f60-adb3-ecd979b66a68" name="FundRaiser.ModelingProject">
+    <elementDefinition Id="2dc466fa-3ba8-440f-9963-7bed7eab01ce" />
+  </package>
+</useCaseModelRoot>

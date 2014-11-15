@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{809ce22a-84ea-456e-9187-54ae0d4543d8}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>FundRaiser.ModelingProject</Name>
+    <RootNamespace>FundRaiser.ModelingProject</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ItemGroup>
+    <Content Include="Funder.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Funder.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Funder.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="ModelDefinition\Package10_1813.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package11_1813.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package12_1813.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package13_1813.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package14_1813.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package15_1813.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package16_1813.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package17_1813.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1813.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_1813.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package3_1813.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package4_1813.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package5_1813.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package6_1813.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package7_1813.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package8_1813.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package9_1813.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1813.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1815.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ReverseEngineering.Log.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="School.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="School.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>School.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="Student.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Student.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Student.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="StudentActivityDiagram.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="StudentActivityDiagram.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>StudentActivityDiagram.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="System.Accountant.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="System.Accountant.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>System.Accountant.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="System.Admin.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="System.Admin.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>System.Admin.usecasediagram</DependentUpon>
+    </Content>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="FundRaiser.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="FundRaiser.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>FundRaiser.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ModelDefinition\FundRaiser.ModelingProject.uml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+</Project>

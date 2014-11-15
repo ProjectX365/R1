@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="0ed07c44-25ef-47d6-a11b-ba1eb95ac14a"
+  name="FundRaiser"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="12fbbd1b-284d-4ab4-bd5d-7e0057e0fb28"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DFundRaiser"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="770739d1-c09e-462c-8446-f440aec82cf8"
+        LastKnownName="UI"
+        LastKnownLocation="Package1_1813.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="25a0cfd1-2788-4b0f-845e-c89b2f000d65"
+        LastKnownName="Model"
+        LastKnownLocation="Package_1815.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="a18f98ff-bfdc-483d-b085-f1806dbb9c0a" name="System.Admin" linkedPackageId="c3f2a113-fcab-4fbb-adce-660f0d9e6f84" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="08952d1d-1417-4655-aca4-1211126ce8c0">
+      <elementDefinition Id="5f5d07ba-fabd-4299-a65d-500c4419a90a" />
+      <body>Approve will publish reuest to site</body>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="54572693-2688-461e-bd5b-ce08cffdda1c" name="System.Admin" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d14d9e35-e275-49be-832b-464177b9f083" />
+        <targetEnds>
+          <association Id="ff6e311d-d87d-4ecd-b08e-8a2f375799f6" isDerived="false" sourceEndRoleName="System.Admin" targetEndRoleName="Create Account3" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="0c1661a0-ef2f-47d7-b3f8-8d9da0757f0a" LastKnownName="Create Account" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="481c7ee4-7f09-4d01-b900-7d3dee4d73bf" name="System.Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8caf9249-2d8a-4432-a698-fd4d07918b2c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="589b7678-1bae-4ade-8b7c-ec5dc2d44bd1" name="Create Account3" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d8f0a434-da76-4fe2-a4e5-18f0efa18480" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d0f5d30e-fe34-4145-8351-5056bad56764" />
+          </association>
+          <association Id="a303274b-6641-4568-b5e1-92566575a42c" isDerived="false" sourceEndRoleName="System.Admin" targetEndRoleName="Approve/Reject student request" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="83899fb7-89ed-4395-8bbf-41f3d3147af2" LastKnownName="Approve/Reject student request" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6b8e629e-841c-43e1-8b41-a0803ca30d64" name="System.Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c36cf768-8c12-493b-a85a-18a7f30fa80f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="27a188ef-1422-4fee-bf48-5948f30e02d0" name="Approve/Reject student request" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d56c03da-7576-43dd-b569-73e8895d8b5a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="34074554-6ea6-40fe-9435-8fcc5901d762" />
+          </association>
+          <association Id="3ccaeeab-834b-411a-b10a-5380d3ded991" isDerived="false" sourceEndRoleName="System.Admin" targetEndRoleName="Correspondence with student/funder" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="1b3336af-4ff7-44d6-9545-97d770f862f8" LastKnownName="Correspondence with student/funder" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="26dc50a1-3ed2-4291-90a1-219b1a9c3180" name="System.Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9bd37f7b-e662-4e8d-94cb-995c06c83a74" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="decb5de8-ffa1-4445-b54a-fffa2144bc10" name="Correspondence with student/funder" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b80df54f-97d5-41a9-b6ee-605a3a168b87" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1240d86a-25af-4271-a057-6b3c841132b0" />
+          </association>
+          <association Id="91494c11-3287-41f3-a2c2-eae65024af78" isDerived="false" sourceEndRoleName="System.Admin" targetEndRoleName="Send expiration notification" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5977d9ea-2719-4a94-a198-e779b6617f94" LastKnownName="Send expiration notification" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d7a97c4c-bfc6-4897-afc4-93f2e3c5921f" name="System.Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7d35dbef-c503-4832-80e9-c7af2039b999" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1376d320-5328-4b55-af62-ba1a04fd0600" name="Send expiration notification" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="eef7677d-df1f-499e-8624-e1ffc4cbeec2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="227689c3-fa42-4330-ae56-70d72571c476" />
+          </association>
+          <association Id="480e1dc6-9f13-4507-8f89-6ac896bd2228" isDerived="false" sourceEndRoleName="System.Admin" targetEndRoleName=" funded approval notification" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="ec7c95b8-61c3-44f9-8290-8297100daee2" LastKnownName=" funded approval notification" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e2c94c83-068d-48ae-bbb3-6e314d99631b" name="System.Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1af6564d-84c6-4d73-a79b-49695c926f6a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="07f69b86-e334-4415-9e45-0f98cca7e321" name=" funded approval notification" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f25734c2-2d78-450e-9ff5-9a6fe6425288" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="77238663-d826-430c-8c93-f765207c8015" />
+          </association>
+          <association Id="63e2ea9f-7982-475a-b5ac-582b5e81ab88" isDerived="false" sourceEndRoleName="System.Admin" targetEndRoleName="Maintain User profile " isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="ef0ee939-331a-494e-ba4f-373ba730ce99" LastKnownName="Maintain User profile " />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="202554a3-90a7-46c7-bc60-1b0e8cbcfc6e" name="System.Admin" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0e17abc9-9f2f-482d-864d-7e100379fe15" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="725488a8-27a7-4841-ac6f-e4e3cbadf0fb" name="Maintain User profile " isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0102d7ea-d11e-43e4-ba94-68685005dbbd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a1572864-e9b1-4a72-b834-6774dd7f5359" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="0c1661a0-ef2f-47d7-b3f8-8d9da0757f0a" name="Create Account" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="85b77a52-8751-4ea8-8f3f-2ad6607e3d6b" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="83899fb7-89ed-4395-8bbf-41f3d3147af2" name="Approve/Reject student request" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b6f89a88-7d44-4e51-8108-104c1b74437e" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1b3336af-4ff7-44d6-9545-97d770f862f8" name="Correspondence with student/funder" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0969b607-3264-4802-b8aa-e13f586d28a0" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ec7c95b8-61c3-44f9-8290-8297100daee2" name=" funded approval notification" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6bfec3d2-a19b-4a78-9632-e998a50bdecd" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5977d9ea-2719-4a94-a198-e779b6617f94" name="Send expiration notification" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="72b46a8b-8e34-4c3d-b333-584e74ee0b64" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ef0ee939-331a-494e-ba4f-373ba730ce99" name="Maintain User profile " isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b5975544-362b-4f20-8fb5-43c885bb6ad8" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="c3f2a113-fcab-4fbb-adce-660f0d9e6f84" name="FundRaiser.ModelingProject">
+    <elementDefinition Id="2dc466fa-3ba8-440f-9963-7bed7eab01ce" />
+  </package>
+</useCaseModelRoot>

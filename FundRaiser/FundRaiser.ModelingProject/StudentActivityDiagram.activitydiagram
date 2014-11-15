@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="77203613-cb26-4260-a2bf-603adf1e5922" name="StudentActivityDiagram" linkedPackageId="9a9e35f0-8460-466e-b88f-be6c5584b325" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="9fb1663a-22b5-483b-80b0-f846a0c657a9">
+      <elementDefinition Id="12d95a78-7fa5-423b-be10-76d47530ba36" />
+      <body> [Only avalible within a threshold respect with expiration] </body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="8485d7c6-a9f3-4658-85e2-f2359c9f1041" LastKnownName="Update fund request" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="89161c80-30c2-4c77-a941-d5dfa9e50307" name="StudentActivityDiagram" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="3e7ab7c4-1a19-449b-a5e7-73e06b66dc4a" />
+        <nodes>
+          <opaqueAction Id="4d4830a6-38d9-4888-806a-d05f4d021293" name="Create Account [Sign up]" isLeaf="false">
+            <elementDefinition Id="38558b3d-37d3-4b5d-b217-ec643a4bf79a" />
+            <flowNodeTargets>
+              <controlFlow Id="a38d993a-6633-4efd-9b23-adc95a1434d6" isLeaf="false">
+                <opaqueActionMoniker Id="645d2ab3-510b-4ad7-bc80-9d8d55e69b92" LastKnownName="Login" />
+                <elementDefinition Id="ac101ff9-f777-469d-abfa-4288d1478b7a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="645d2ab3-510b-4ad7-bc80-9d8d55e69b92" name="Login" isLeaf="false">
+            <elementDefinition Id="8dc1667c-1ecb-4d95-b182-8d32355b8db5" />
+            <flowNodeTargets>
+              <controlFlow Id="523d24b1-fb74-4e27-90f7-4aaf762bd0b3" isLeaf="false">
+                <decisionNodeMoniker Id="ab7ab6a4-035c-4b13-96bb-4d477739bc17" LastKnownName="Decision2" />
+                <elementDefinition Id="df049b32-7f05-4c6f-92f4-6b1a48a3c29c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <objectNode Id="8f29ea63-b768-4ab7-8d3e-267c98a0afcf" name="Student" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="f3c2d835-53b6-4ee0-b6f3-8b58487ccd65" />
+            <objectFlowTargets>
+              <objectFlow Id="8d1f8716-ac84-4b02-a8bf-d3488c075ed6" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <decisionNodeMoniker Id="a50fbb49-add7-430e-b49a-97800e3efca5" LastKnownName="Decision1" />
+                <elementDefinition Id="42443101-9d9e-4a9c-bbfc-ce6d654d9f9f" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger Id="6475b772-dd9c-4b49-b4f4-06dfd904e268" name="2147483647" value="2147483647">
+                <elementDefinition Id="3ee9c480-1505-4e28-903e-5dc155c1103a" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <opaqueAction Id="fcd56ba4-b0a6-4d43-b37c-db3989cb87d1" name="Create fund request" isLeaf="false">
+            <elementDefinition Id="082b641c-981a-4c13-ba71-df6bce44b4fa" />
+            <flowNodeTargets>
+              <controlFlow Id="0afceb89-cdec-4206-8a95-db5e01ccf860" isLeaf="false">
+                <activityFinalNodeMoniker Id="bb788e4d-cf6f-4202-b3ef-56f4409cb04e" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="21e2d74a-553d-40c5-be61-2d8334e005fc" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="9318e290-9699-42d1-958c-dbe49afbdbf9" name="Self Marketing" isLeaf="false">
+            <elementDefinition Id="941682dc-ad31-40bf-bc79-2eac852f0dfd" />
+            <flowNodeTargets>
+              <controlFlow Id="d926bc2e-6437-498d-be25-c721c5e29cfd" isLeaf="false">
+                <joinNodeMoniker Id="842ca9aa-8fd4-4cdf-9281-e0e4b818b19b" LastKnownName="Join1" />
+                <elementDefinition Id="226a8aba-96f3-4cb8-95b3-cbcf14e95a93" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="8485d7c6-a9f3-4658-85e2-f2359c9f1041" name="Update fund request" isLeaf="false">
+            <elementDefinition Id="e80cdf13-7a85-4572-9a51-f582088b0d16" />
+            <flowNodeTargets>
+              <controlFlow Id="71bcf631-0cae-4566-87b1-d9ae7da0e59f" isLeaf="false">
+                <joinNodeMoniker Id="842ca9aa-8fd4-4cdf-9281-e0e4b818b19b" LastKnownName="Join1" />
+                <elementDefinition Id="b3227bd1-4ce0-4bfd-8083-17b8415c6324" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="cf53e9d3-d783-426a-9c95-ed49921283c4" name="Update with expense summary and/or status" isLeaf="false">
+            <elementDefinition Id="31701905-a325-480a-90d3-dd99af82b339" />
+            <flowNodeTargets>
+              <controlFlow Id="06950a22-77e3-429a-8c6b-f206201b54bf" isLeaf="false">
+                <joinNodeMoniker Id="842ca9aa-8fd4-4cdf-9281-e0e4b818b19b" LastKnownName="Join1" />
+                <elementDefinition Id="e9a03fd4-c410-4350-b61d-932630f3ae07" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <forkNode Id="436ab583-94af-4506-8baf-5ea782b8f91f" name="Fork1" isLeaf="false">
+            <elementDefinition Id="5733a092-15c2-4876-a093-fcc437841fa8" />
+            <flowNodeTargets>
+              <controlFlow Id="2c1fd7c6-4b21-4b64-a36f-972777db4358" isLeaf="false">
+                <opaqueActionMoniker Id="9318e290-9699-42d1-958c-dbe49afbdbf9" LastKnownName="Self Marketing" />
+                <elementDefinition Id="c0e7c7b7-1a61-4ade-8a66-a706b1499ca5" />
+              </controlFlow>
+              <controlFlow Id="5992b25c-c54e-485c-88aa-171228257bed" isLeaf="false">
+                <opaqueActionMoniker Id="8485d7c6-a9f3-4658-85e2-f2359c9f1041" LastKnownName="Update fund request" />
+                <elementDefinition Id="23358d84-d439-4e7d-84fa-adb6af51bb58" />
+              </controlFlow>
+              <controlFlow Id="a7fb348e-66d5-448f-be10-dca57b36621c" isLeaf="false">
+                <opaqueActionMoniker Id="cf53e9d3-d783-426a-9c95-ed49921283c4" LastKnownName="Update with expense summary and/or status" />
+                <elementDefinition Id="6e4ddadc-acfe-4861-8311-7010bcc92be9" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <decisionNode Id="a50fbb49-add7-430e-b49a-97800e3efca5" name="Decision1" isLeaf="false">
+            <elementDefinition Id="f625640d-4f5e-453c-956b-60391dbf4159" />
+            <flowNodeTargets>
+              <controlFlow Id="f2ca7d27-4441-485d-be69-59be5258f220" isLeaf="false">
+                <opaqueActionMoniker Id="4d4830a6-38d9-4888-806a-d05f4d021293" LastKnownName="Create Account [Sign up]" />
+                <elementDefinition Id="486075bd-7cd4-47fc-81ff-300102bb7d85" />
+              </controlFlow>
+              <controlFlow Id="e7d1271e-e5d4-4545-9a6a-d97914638a0c" isLeaf="false">
+                <opaqueActionMoniker Id="645d2ab3-510b-4ad7-bc80-9d8d55e69b92" LastKnownName="Login" />
+                <elementDefinition Id="8606322f-e7b2-4135-a584-74ce779fd30a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <initialNode Id="ba548f77-8299-4fb0-a9d5-78c00b28b8db" name="Initial1" isLeaf="false">
+            <elementDefinition Id="5865073d-f0ff-4b23-a763-cff91f6af6db" />
+            <objectFlowTargets>
+              <objectFlow Id="4f06cb8a-46d9-445b-92f2-172b6f5bc292" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <objectNodeMoniker Id="8f29ea63-b768-4ab7-8d3e-267c98a0afcf" LastKnownName="Student" />
+                <elementDefinition Id="1c708647-0c84-46e1-bc1d-bba1ea085ba0" />
+              </objectFlow>
+            </objectFlowTargets>
+          </initialNode>
+          <joinNode Id="842ca9aa-8fd4-4cdf-9281-e0e4b818b19b" name="Join1" isLeaf="false">
+            <elementDefinition Id="b92efa3d-6654-4078-ad48-1fc08c385326" />
+            <flowNodeTargets>
+              <controlFlow Id="6147120a-7142-4981-8962-70c9b1efe4e3" isLeaf="false">
+                <activityFinalNodeMoniker Id="bb788e4d-cf6f-4202-b3ef-56f4409cb04e" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="fa3aba79-50b1-40ed-9282-86f71096be41" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <activityFinalNode Id="bb788e4d-cf6f-4202-b3ef-56f4409cb04e" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="a859bb77-6d45-48bf-a785-dcb34848021d" />
+          </activityFinalNode>
+          <decisionNode Id="ab7ab6a4-035c-4b13-96bb-4d477739bc17" name="Decision2" isLeaf="false">
+            <elementDefinition Id="a367f9b1-af70-4f30-8f69-9886ae022fd7" />
+            <flowNodeTargets>
+              <controlFlow Id="3ce55ac0-60fb-4de3-84b6-6eb2e4604495" isLeaf="false">
+                <opaqueActionMoniker Id="fcd56ba4-b0a6-4d43-b37c-db3989cb87d1" LastKnownName="Create fund request" />
+                <elementDefinition Id="3f11219e-4808-4d9e-84fc-150ba316ce9b" />
+              </controlFlow>
+              <controlFlow Id="ae8b9266-00ce-4c4b-bd96-a8149a671b84" isLeaf="false">
+                <forkNodeMoniker Id="436ab583-94af-4506-8baf-5ea782b8f91f" LastKnownName="Fork1" />
+                <elementDefinition Id="3bc65b35-5c61-4bed-a68f-f6e835709b83" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="9a9e35f0-8460-466e-b88f-be6c5584b325" name="FundRaiser.ModelingProject">
+    <elementDefinition Id="2dc466fa-3ba8-440f-9963-7bed7eab01ce" />
+  </package>
+</activityRootModel>

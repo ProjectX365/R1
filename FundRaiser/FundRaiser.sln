@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundRaiser.UI", "FundRaiser.UI\FundRaiser.UI.csproj", "{566F58B9-9D72-4D7E-854E-DD4F5322331C}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundRaiser.Model", "FundRaiser.Model\FundRaiser.Model.csproj", "{02B67DA1-B692-42CA-9127-68DDE6760E88}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundRaiser.DAL", "FundRaiser.DAL\FundRaiser.DAL.csproj", "{B537B62C-3A16-4262-8208-9D77FD76128B}"
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "FundRaiser.ModelingProject", "FundRaiser.ModelingProject\FundRaiser.ModelingProject.modelproj", "{809CE22A-84EA-456E-9187-54AE0D4543D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{B537B62C-3A16-4262-8208-9D77FD76128B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B537B62C-3A16-4262-8208-9D77FD76128B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B537B62C-3A16-4262-8208-9D77FD76128B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{809CE22A-84EA-456E-9187-54AE0D4543D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{809CE22A-84EA-456E-9187-54AE0D4543D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{809CE22A-84EA-456E-9187-54AE0D4543D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{809CE22A-84EA-456E-9187-54AE0D4543D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

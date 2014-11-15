@@ -19,5 +19,10 @@ namespace FundRaiser.DAL
         {
             throw new NotImplementedException();
         }
+
+        public bool CreateProfile(IEntity entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
