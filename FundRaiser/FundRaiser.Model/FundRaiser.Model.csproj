@@ -51,6 +51,7 @@
     <Compile Include="IAsset.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="IStory.cs" />
+    <Compile Include="LoginInfo.cs" />
     <Compile Include="MarketingSourceEnum.cs" />
     <Compile Include="School.cs" />
     <Compile Include="SemisterEnum.cs" />

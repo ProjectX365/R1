@@ -14,6 +14,13 @@ namespace FundRaiser.WebApi
 {
     public class Startup
     {
+        public static OAuthBearerAuthenticationOptions OAuthBearerOptions { get; private set; }
+
+        static Startup()
+        {
+            OAuthBearerOptions = new OAuthBearerAuthenticationOptions();
+        }
+
         public void Configuration(IAppBuilder app)
         {
             HttpConfiguration config = new HttpConfiguration();
@@ -30,14 +37,15 @@ namespace FundRaiser.WebApi
             OAuthAuthorizationServerOptions OAuthServerOptions = new OAuthAuthorizationServerOptions()
             {
                 AllowInsecureHttp = true,
-                TokenEndpointPath = new PathString("/token"),
+                TokenEndpointPath = new PathString("/Token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
+                //AuthorizeEndpointPath = new PathString("/api/Login"),  //????
                 Provider = new ApplicationOAuthProvider()
             };
 
             // Token Generation
             app.UseOAuthAuthorizationServer(OAuthServerOptions);
-            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
+            app.UseOAuthBearerAuthentication(OAuthBearerOptions);
 
         }
 

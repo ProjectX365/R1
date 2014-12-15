@@ -7,7 +7,7 @@ using FundRaiser.Model;
 
 namespace FundRaiser.DAL
 {
-    interface IRepository
+    public interface IRepository
     {
         bool SignUp(string userName, string password);
 
