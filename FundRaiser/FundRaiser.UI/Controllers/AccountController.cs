@@ -325,6 +325,7 @@ namespace FundRaiser.UI.Controllers
         [AllowAnonymous]
         public async Task<ActionResult> ExternalLoginCallback(string returnUrl)
         {
+            //TODO: Get external user id from 3rd party OAuth here
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
             if (loginInfo == null)
             {

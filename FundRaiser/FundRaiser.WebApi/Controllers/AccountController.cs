@@ -15,5 +15,11 @@ namespace FundRaiser.WebApi.Controllers
             await Task.Delay(1000);
             return Ok();
         }
+
+        public async Task<IHttpActionResult> Login(string email, string password, string UIN)
+        {
+            await Task.Delay(1000);
+            return Ok();
+        }
     }
 }
