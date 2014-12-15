@@ -9,76 +9,37 @@ namespace FundRaiser.Model
         /// <summary>
         /// Entity Id 
         /// </summary>
-        public long Id
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public string Id { get; set;}
 
         /// <summary>
         /// Entity /Actor First Name. 
         /// </summary>
-        public string FirstName
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public string FirstName  { get; set;}
 
         /// <summary>
         /// Entity/ Actor Last Name. 
         /// </summary>
-        public string LastName
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public string LastName  { get; set;}
 
         /// <summary>
-        /// Entity/ Actor Last Name. 
+        /// Entity/ Actor EmailID. 
         /// </summary>
-        public string EmailID
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
+        public string EmailID  { get; set;}
+       
         /// <summary>
         /// Entity Photo reference url .
         /// </summary>
-        public string PhotoHref
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public string PhotoHref { get; set; }
+        
+        /// <summary>
+        /// Entity/ Actor UIN. 
+        /// </summary>
+        public string UIN  { get; set;}
+
+        /// <summary>
+        /// Entity/ Actor Password. 
+        /// </summary>
+        public string Password { get; set; }
+
     }
 }

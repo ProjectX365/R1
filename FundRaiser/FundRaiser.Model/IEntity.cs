@@ -9,7 +9,7 @@ namespace FundRaiser.Model
         /// <summary>
         /// Entity id 
         /// </summary>
-        long Id { get; set; }
+        string Id { get; set; }
 
         /// <summary>
         /// Entity First Name. 
@@ -32,6 +32,11 @@ namespace FundRaiser.Model
         /// </summary>
         string PhotoHref { get; set; }
 
+        /// <summary>
+        /// Entity 3rd party ID
+        /// </summary>
+        string UIN { get; set; }
 
+        string Password { get; set; }
     }
 }

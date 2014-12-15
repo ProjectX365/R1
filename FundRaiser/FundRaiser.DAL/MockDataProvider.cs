@@ -9,15 +9,27 @@ namespace FundRaiser.DAL
 {
     public  class MockDataProvider :IRepository
     {
+        static List<Entity> entityList = new List<Entity>();
         //public static IOrderedEnumerable<Student>
-        public bool SignUp(string userName, string password)
+        public bool SignUp(string email, string firstName, string lastName, string UIN, string password)
         {
-            throw new NotImplementedException();
+            entityList.Add(new Entity { EmailID = email, FirstName = firstName, LastName = lastName, Password=password, UIN = UIN, Id = Guid.NewGuid().ToString() });
+            return true;
         }
 
-        public bool SignIn(string userName, string password, AuthenticationSourceEnum authenticationSource)
+        public bool SignIn(string email, string password, string UIN)
         {
-            throw new NotImplementedException();
+            //TODO:  It's late so will clean this up later
+            if (UIN!=null)
+            {
+                var user = entityList.Where(x=>x.UIN == UIN && x.Password == password).FirstOrDefault();
+                return (user != null ? true : false);
+            }
+            else
+            {
+                var user = entityList.Where(x => x.EmailID == email && x.Password == password).FirstOrDefault();
+                return (user != null ? true : false);
+            }
         }
 
         public bool CreateProfile(IEntity entity)

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FundRaiser.DAL;
+using Microsoft.Practices.Unity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -9,6 +11,11 @@ namespace FundRaiser.WebApi
     {
         public static void Register(HttpConfiguration config)
         {
+            //Register for unity
+            var container = new UnityContainer();
+            container.RegisterType<IRepository, MockDataProvider>(new HierarchicalLifetimeManager());
+            config.DependencyResolver = new UnityResolver(container);
+
             // Web API configuration and services
 
             // Web API routes

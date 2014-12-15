@@ -16,11 +16,7 @@ namespace FundRaiser.WebApi.Controllers
     [RoutePrefix("api")]
     public class AccountController : ApiController
     {
-        IRepository repository = null;
-        public AccountController()
-        {
-            //TODO: remove when IOC added
-        }
+        private IRepository repository = null;
 
         public AccountController(IRepository repo)
         {
@@ -30,21 +26,33 @@ namespace FundRaiser.WebApi.Controllers
         // POST api/register
         [HttpPost]
         [Route("Register")]
-        public HttpResponseMessage Register(string email, string password, string UIN)
+        public HttpResponseMessage Register(Entity userInfo)
         {
-            return Request.CreateResponse(HttpStatusCode.OK);
+            var signedUp = repository.SignUp(userInfo.EmailID, userInfo.FirstName, userInfo.LastName, userInfo.UIN, userInfo.Password);
+            if (signedUp)
+            {
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest);
+            }
         }
 
         // POST api/login
         [HttpPost]
         [Route("Login")]
-        public HttpResponseMessage Login(LoginInfo loginInfo)
+        public HttpResponseMessage Login(Entity userInfo)
         {
             //IDictionary<String, String> data = new Dictionary<String, String>
             //{
             //    { "email", email }
             //};
-
+            if (!repository.SignIn(userInfo.EmailID, userInfo.Password, userInfo.UIN))
+            {
+                return Request.CreateResponse(HttpStatusCode.NotFound);
+            }
+            
             var claims = new List<Claim>();
             claims.Add(new Claim(ClaimTypes.Name, "test1"));
             claims.Add(new Claim(ClaimTypes.Email, "test2"));
@@ -59,7 +67,7 @@ namespace FundRaiser.WebApi.Controllers
             {
                 Content = new ObjectContent<object>(new
                 {
-                    UserName = loginInfo.Email,
+                    UserName = userInfo.EmailID,
                     AccessToken = token
                 }, Configuration.Formatters.JsonFormatter)
             };
