@@ -50,19 +50,19 @@ namespace FundRaiser.UI
             //    clientId: "",
             //    clientSecret: "");
 
-            //app.UseTwitterAuthentication(
-            //   consumerKey: "",
-            //   consumerSecret: "");
+            app.UseTwitterAuthentication(
+               consumerKey: "GU2tvhj04JdSIxAxPZKB16GAU",
+               consumerSecret: "ViexYEXsVYBQHLBA5mV23YlOIAx4NJKOOBAQjz8e2IPg3WPU6F");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "1573104979568556",
+               appSecret: "14e92a36090ac69adc778ddec27191a2");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "517594432081-i11f1i2gre12js7kdko2n3da19s9s043.apps.googleusercontent.com",
+                ClientSecret = "M3nQtBRbDErK75W5QCKF0vgW"
+            });
         }
     }
 }
