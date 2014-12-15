@@ -7,7 +7,6 @@ using System.Web.Http;
 
 namespace FundRaiser.WebApi.Controllers
 {
-    [Authorize]
     public class ValuesController : ApiController
     {
         // GET api/values

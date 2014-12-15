@@ -3,7 +3,7 @@
     /// <summary>
     /// class representation of fund expense distribution. 
     /// </summary>
-    class ExpenseDistribution
+    public class ExpenseDistribution
     {
         /// <summary>
         /// Fund category, tells about where fund is spend. 
