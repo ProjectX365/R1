@@ -4,7 +4,7 @@ namespace FundRaiser.Model
     /// <summary>
     /// interface representing story, sotry is short note from active users 
     /// </summary>
-    interface IStory
+    public interface IStory
     {
         /// <summary>
         /// short description 

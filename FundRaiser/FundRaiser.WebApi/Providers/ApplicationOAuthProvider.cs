@@ -1,15 +1,20 @@
-﻿using Microsoft.Owin.Security.OAuth;
-using System;
-using System.Collections.Generic;
+﻿using FundRaiser.DAL;
+using Microsoft.Owin.Security.OAuth;
 using System.Linq;
 using System.Security.Claims;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace FundRaiser.WebApi.Providers
 {
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {
+        private IRepository repository = null;
+
+        public ApplicationOAuthProvider(IRepository repo)
+        {
+            repository = repo;
+        }
+
         public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
             context.Validated();
@@ -20,30 +25,25 @@ namespace FundRaiser.WebApi.Providers
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
             bool isValidUser = false;
 
+            //Get UIN
             var data = await context.Request.ReadFormAsync();
-            var UIN = data.Where(x => x.Key == "UIN").FirstOrDefault().Value;
-
-            if (UIN != null)
+            var UINstr = data.Where(x => x.Key == "UIN").FirstOrDefault().Value;
+            string UIN = null;
+            if (UINstr != null)
             {
-                string UINstr = UIN.First().ToString();
-                //TODO:  Check UIN in system to make sure user is register with 3rd party OAuth 
+                UIN = UINstr.First().ToString();
+            }
+
+            if (repository.SignIn(context.UserName, context.Password, UIN))
+            {
                 isValidUser = true;
             }
-            else
-            {
-                //TODO: Check User/Password in system to make sure it's register in local sys 
-                if (context.UserName == "test" && context.Password == "test")
-                {
-                    isValidUser = true;
-                }
-            }
-
+            
             if (!isValidUser)
             {
                 context.SetError("invalid_grant", "The user name or password is incorrect.");
                 return;
             }
-
 
             var identity = new ClaimsIdentity(context.Options.AuthenticationType);
             //identity.AddClaim(new Claim("sub", context.UserName)); 

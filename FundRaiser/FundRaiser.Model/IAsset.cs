@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FundRaiser.Model
 {
-    interface IAsset
+    public interface IAsset
     {
     }
 }

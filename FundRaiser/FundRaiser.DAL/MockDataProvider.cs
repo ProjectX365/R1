@@ -22,12 +22,12 @@ namespace FundRaiser.DAL
             //TODO:  It's late so will clean this up later
             if (UIN!=null)
             {
-                var user = entityList.Where(x=>x.UIN == UIN && x.Password == password).FirstOrDefault();
+                var user = entityList.Find(x=>x.UIN == UIN && x.Password == password);
                 return (user != null ? true : false);
             }
             else
             {
-                var user = entityList.Where(x => x.EmailID == email && x.Password == password).FirstOrDefault();
+                var user = entityList.Find(x => x.EmailID.ToUpper() == email.ToUpper() && x.Password == password);
                 return (user != null ? true : false);
             }
         }
