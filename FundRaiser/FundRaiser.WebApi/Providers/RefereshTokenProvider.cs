@@ -15,6 +15,7 @@ namespace FundRaiser.WebApi.Providers
     {
         private static ConcurrentDictionary<string, AuthenticationTicket> _refreshTokens = new ConcurrentDictionary<string, AuthenticationTicket>();
 
+        //Issue new refresh token
         public async Task CreateAsync(AuthenticationTokenCreateContext context)
         {
             var guid = Guid.NewGuid().ToString();
@@ -26,6 +27,8 @@ namespace FundRaiser.WebApi.Providers
             context.SetToken(guid);
         }
 
+        //Check for valid refresh token against storage (private dictionary _refreshTokens for testing now)
+        //TODO: need presistance storage for this
         public async Task ReceiveAsync(AuthenticationTokenReceiveContext context)
         {
             AuthenticationTicket ticket;
