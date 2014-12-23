@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using FundRaiser.UI.Models;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace FundRaiser.UI.Controllers
 {
@@ -327,13 +329,19 @@ namespace FundRaiser.UI.Controllers
         {
             //TODO: Get external user id from 3rd party OAuth here
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
+
+            var test = GetExternalUserId(loginInfo.ExternalIdentity.Claims);
+
             if (loginInfo == null)
             {
                 return RedirectToAction("Login");
             }
 
             // Sign in the user with this external login provider if the user already has a login
-            var result = await SignInManager.ExternalSignInAsync(loginInfo, isPersistent: false);
+            //var result = await SignInManager.ExternalSignInAsync(loginInfo, isPersistent: false);
+            var result = await 
+           
+            
             switch (result)
             {
                 case SignInStatus.Success:
@@ -436,6 +444,13 @@ namespace FundRaiser.UI.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        private string GetExternalUserId(IEnumerable<Claim> claims)
+        {
+            var userId = claims.First().Value;
+
+            return userId;
+        }
+
         internal class ChallengeResult : HttpUnauthorizedResult
         {
             public ChallengeResult(string provider, string redirectUri)
@@ -464,6 +479,8 @@ namespace FundRaiser.UI.Controllers
                 context.HttpContext.GetOwinContext().Authentication.Challenge(properties, LoginProvider);
             }
         }
+
+        
         #endregion
     }
 }
