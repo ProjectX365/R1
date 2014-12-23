@@ -8,6 +8,7 @@
     {
         FACEBOOK, 
         GOOGLE,
-        FUNDRAISER
+        FUNDRAISER, 
+        TWITTER
     }
 }

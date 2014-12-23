@@ -1,6 +1,8 @@
-﻿using FundRaiser.WebApi.Providers;
+﻿using FundRaiser.DAL;
+using FundRaiser.WebApi.Providers;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
+using Microsoft.Practices.Unity;
 using Owin;
 using System;
 using System.Collections.Generic;
@@ -9,36 +11,32 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
 
+//********************************************************
+// This is the OWIN start up class which configure OWIN setup
+//********************************************************
 [assembly: OwinStartup(typeof(FundRaiser.WebApi.Startup))]
 namespace FundRaiser.WebApi
 {
     public class Startup
     {
-        public void Configuration(IAppBuilder app)
-        {
-            HttpConfiguration config = new HttpConfiguration();
+        public static OAuthBearerAuthenticationOptions OAuthBearerOptions { get; private set; }
 
-            ConfigureOAuth(app);
-
-            WebApiConfig.Register(config);
-            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
-            //app.UseWebApi(config);
+        static Startup()
+        {            
+            OAuthBearerOptions = new OAuthBearerAuthenticationOptions();
         }
 
-        public void ConfigureOAuth(IAppBuilder app)
+        public void Configuration(IAppBuilder app)
         {
-            OAuthAuthorizationServerOptions OAuthServerOptions = new OAuthAuthorizationServerOptions()
-            {
-                AllowInsecureHttp = true,
-                TokenEndpointPath = new PathString("/token"),
-                AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
-                Provider = new ApplicationOAuthProvider()
-            };
+            ConfigureOAuth(app, WebApiConfig.container.Resolve<IMyOAuthAuthorizationServerOptions>());  // use location service
+            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+        }
 
+        public void ConfigureOAuth(IAppBuilder app, IMyOAuthAuthorizationServerOptions oAuthServerOptions)
+        {
             // Token Generation
-            app.UseOAuthAuthorizationServer(OAuthServerOptions);
-            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
-
+            app.UseOAuthAuthorizationServer(oAuthServerOptions.GetOptions());
+            app.UseOAuthBearerAuthentication(OAuthBearerOptions);
         }
 
     }

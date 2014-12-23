@@ -11,6 +11,11 @@ using Microsoft.Owin.Security;
 using FundRaiser.UI.Models;
 using System.Collections;
 using System.Collections.Generic;
+using FundRaiser.Model;
+using FundRaiser.UI.HttpHelper;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+using System.Net;
 
 namespace FundRaiser.UI.Controllers
 {
@@ -330,33 +335,31 @@ namespace FundRaiser.UI.Controllers
             //TODO: Get external user id from 3rd party OAuth here
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
 
-            var test = GetExternalUserId(loginInfo.ExternalIdentity.Claims);
+            var uin = GetExternalUserId(loginInfo.ExternalIdentity.Claims);
+            Entity entity = new Entity() { UIN = uin };
+            RestHelper restHelper = new RestHelper();
+            var response =restHelper.ExternalSignInAsync(entity);
 
+            var contentDictionary =  JsonConvert.DeserializeObject<Dictionary<string,string>>(((RestSharp.RestResponseBase)(response)).Content);
+            Session["AccessToken"] = contentDictionary["AccessToken"];
+           
             if (loginInfo == null)
             {
+                
                 return RedirectToAction("Login");
             }
 
-            // Sign in the user with this external login provider if the user already has a login
-            //var result = await SignInManager.ExternalSignInAsync(loginInfo, isPersistent: false);
-            var result = await 
-           
-            
-            switch (result)
+            if (response.StatusCode != HttpStatusCode.OK)
             {
-                case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
-                case SignInStatus.LockedOut:
-                    return View("Lockout");
-                case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = false });
-                case SignInStatus.Failure:
-                default:
-                    // If the user does not have an account, then prompt the user to create an account
-                    ViewBag.ReturnUrl = returnUrl;
-                    ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
-                    return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
+                ViewBag.ReturnUrl = returnUrl;
+                ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
+                return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
             }
+            else
+            {
+                return RedirectToLocal(returnUrl);
+            }
+           
         }
 
         //

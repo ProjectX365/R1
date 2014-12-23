@@ -7,14 +7,12 @@ using FundRaiser.Model;
 
 namespace FundRaiser.DAL
 {
-    interface IRepository
+    public interface IRepository
     {
-        bool SignUp(string userName, string password);
+        bool SignUp(string email, string firstName, string lastName, string UIN, string password);
 
-        bool SignIn(string userName, string password, AuthenticationSourceEnum  authenticationSource);
+        bool SignIn(string email, string password, string UIN);
 
         bool CreateProfile(IEntity entity);
-
-
     }
 }
