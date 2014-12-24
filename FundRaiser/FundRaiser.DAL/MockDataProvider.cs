@@ -22,7 +22,7 @@ namespace FundRaiser.DAL
             //TODO:  It's late so will clean this up later
             if (UIN!=null)
             {
-                var user = entityList.Find(x=>x.UIN == UIN && x.Password == password);
+                var user = entityList.Find(x=>x.UIN == UIN);
                 return (user != null ? true : false);
             }
             else

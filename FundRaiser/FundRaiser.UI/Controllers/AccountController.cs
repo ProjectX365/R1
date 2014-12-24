@@ -327,6 +327,7 @@ namespace FundRaiser.UI.Controllers
         {
             //TODO: Get external user id from 3rd party OAuth here
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
+            
             if (loginInfo == null)
             {
                 return RedirectToAction("Login");
