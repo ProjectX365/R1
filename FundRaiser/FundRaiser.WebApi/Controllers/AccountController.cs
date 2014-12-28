@@ -40,6 +40,7 @@ namespace FundRaiser.WebApi.Controllers
         }
 
         // POST api/login
+        [Obsolete]
         [HttpPost]
         [Route("Login")]
         public HttpResponseMessage Login(Entity userInfo)
@@ -48,10 +49,10 @@ namespace FundRaiser.WebApi.Controllers
             //{
             //    { "email", email }
             //};
-            if (!repository.SignIn(userInfo.EmailID, userInfo.Password, userInfo.UIN))
-            {
-                return Request.CreateResponse(HttpStatusCode.NotFound);
-            }
+            //if (!repository.SignIn(userInfo.EmailID, userInfo.Password, userInfo.UIN))
+            //{
+            //    return Request.CreateResponse(HttpStatusCode.NotFound);
+            //}
             
             var claims = new List<Claim>();
             claims.Add(new Claim(ClaimTypes.Name, "test1"));
@@ -68,7 +69,8 @@ namespace FundRaiser.WebApi.Controllers
                 Content = new ObjectContent<object>(new
                 {
                     UserName = userInfo.EmailID,
-                    AccessToken = token
+                    AccessToken = token,
+                    ClaimsIdentity = oAuthIdentity
                 }, Configuration.Formatters.JsonFormatter)
             };
         }

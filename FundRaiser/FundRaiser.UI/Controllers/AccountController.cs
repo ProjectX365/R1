@@ -1,15 +1,18 @@
-﻿using System;
-using System.Globalization;
+﻿using FundRaiser.Model;
+using FundRaiser.UI.HttpHelper;
+using FundRaiser.UI.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using FundRaiser.UI.Models;
-
 namespace FundRaiser.UI.Controllers
 {
     [Authorize]
@@ -325,31 +328,51 @@ namespace FundRaiser.UI.Controllers
         [AllowAnonymous]
         public async Task<ActionResult> ExternalLoginCallback(string returnUrl)
         {
-            //TODO: Get external user id from 3rd party OAuth here
+            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+        
+            //Get external user id from 3rd party OAuth here
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
-            
             if (loginInfo == null)
             {
                 return RedirectToAction("Login");
             }
 
-            // Sign in the user with this external login provider if the user already has a login
-            var result = await SignInManager.ExternalSignInAsync(loginInfo, isPersistent: false);
-            switch (result)
+            var uin = GetExternalUserId(loginInfo.ExternalIdentity.Claims);
+            Entity entity = new Entity() { UIN = uin };
+            RestHelper restHelper = new RestHelper();
+            var response =restHelper.SignInAsync(entity);
+
+            var contentDictionary =  JsonConvert.DeserializeObject<Dictionary<string,object>>(((RestSharp.RestResponseBase)(response)).Content);
+            Session["AccessToken"] = contentDictionary["access_token"].ToString();
+
+            if (response.StatusCode != HttpStatusCode.OK)
             {
-                case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
-                case SignInStatus.LockedOut:
-                    return View("Lockout");
-                case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = false });
-                case SignInStatus.Failure:
-                default:
-                    // If the user does not have an account, then prompt the user to create an account
-                    ViewBag.ReturnUrl = returnUrl;
-                    ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
-                    return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
+                ViewBag.ReturnUrl = returnUrl;
+                ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
+                return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
             }
+            else
+            {
+                //Get claims from WebApi response header
+                var claimHeader = ((RestSharp.RestResponseBase)(response)).Headers.First(c=>c.Name=="Claims").Value.ToString();
+                var claims = JsonConvert.DeserializeObject<Dictionary<string, string>>(claimHeader);
+
+                var identity = new ClaimsIdentity(new[] {
+                            new Claim(ClaimTypes.Name, claims["username"]),
+                        },
+                        DefaultAuthenticationTypes.ApplicationCookie,
+                        ClaimTypes.Name, ClaimTypes.Role);
+
+                identity.AddClaim(new Claim(ClaimTypes.Role, claims["role"]));
+
+                HttpContext.GetOwinContext().Authentication.SignIn(new AuthenticationProperties
+                {
+                    IsPersistent = false
+                }, identity);
+
+                return RedirectToLocal(returnUrl);
+            }
+           
         }
 
         //
@@ -396,7 +419,15 @@ namespace FundRaiser.UI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
-            AuthenticationManager.SignOut();
+            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+
+            if (Request.Cookies[".AspNet.ExternalCookie"] != null)
+            {
+                var c = new System.Web.HttpCookie(".AspNet.ExternalCookie");
+                c.Expires = DateTime.Now.AddDays(-1);
+                Response.Cookies.Add(c);
+            }
+            
             return RedirectToAction("Index", "Home");
         }
 
@@ -437,6 +468,12 @@ namespace FundRaiser.UI.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        private string GetExternalUserId(IEnumerable<Claim> claims)
+        {
+            var userId = claims.First().Value;
+            return userId;
+        }
+
         internal class ChallengeResult : HttpUnauthorizedResult
         {
             public ChallengeResult(string provider, string redirectUri)
@@ -465,6 +502,8 @@ namespace FundRaiser.UI.Controllers
                 context.HttpContext.GetOwinContext().Authentication.Challenge(properties, LoginProvider);
             }
         }
+
+        
         #endregion
     }
 }
