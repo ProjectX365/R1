@@ -14,7 +14,9 @@ namespace FundRaiser.UI.HttpHelper
         RestClient restClient;
         public RestHelper()
         {
-            restClient = new RestClient("http://localhost.fiddler:8081/");
+            //Use this if nneed to debug service
+            //restClient = new RestClient("http://localhost.fiddler:8081/");
+            restClient = new RestClient("http://localhost:8081/");
         }
         public IRestResponse<Entity> SignInAsync(Entity entity)
         {

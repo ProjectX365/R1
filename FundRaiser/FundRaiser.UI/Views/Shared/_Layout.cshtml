@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Fund Raiser Home</title>
-    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/css")  
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
@@ -38,8 +38,73 @@
         </footer>
     </div>
 
+    <div id="dialog-confirm">        
+    </div>
+
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
 </html>
+<script>    
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '1573104979568556',
+            cookie: true,  // enable cookies to allow the server to access // the session
+            xfbml: false,  // parse social plugins on this page
+            version: 'v2.1' // use version 2.1
+        });    
+    };
+
+    function fblogout() {
+        FB.getLoginStatus(function (response) {
+            if (response.status === 'connected') {
+                $("#dialog-confirm").text('"No" to just log off from Fundraiser and keep Facebook session open.');
+                $("#dialog-confirm").dialog({
+                    title: "Logout from FundRaiser and Facebook sessions?",
+                    resizable: false,
+                    height: 160,
+                    width: 600,
+                    modal: true,
+                    buttons: {
+                        "YES": function () {
+                            $(this).dialog("close");
+                            //Logout from FB session
+                            FB.logout(function (response) {
+                                //Logout FR session
+                                document.getElementById('logoutForm').submit();                                
+                            });
+                        },
+                        "NO": function () {
+                            $(this).dialog("close");
+                            //Logout FR session
+                            document.getElementById('logoutForm').submit();
+                        }
+                    },
+
+                    //add this to reolve bootstrap and jquery ui script conflict issue
+                    open: function () {
+                        $(this).closest(".ui-dialog")
+                        .find(".ui-dialog-titlebar-close")
+                        .removeClass("ui-dialog-titlebar-close")
+                        .html("<span class='ui-button-icon-primary ui-icon ui-icon-closethick'></span>");
+                    }
+                });
+            }
+            else { //logout from website
+                document.getElementById('logoutForm').submit();
+                alert("Logout!");
+            }
+        });
+    }
+    
+</script>
