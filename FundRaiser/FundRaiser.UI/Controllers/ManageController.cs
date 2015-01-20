@@ -7,6 +7,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using FundRaiser.UI.Models;
+using System.Collections.Generic;
+using System.Security.Claims;
 
 namespace FundRaiser.UI.Controllers
 {
@@ -38,7 +40,8 @@ namespace FundRaiser.UI.Controllers
         //
         // GET: /Manage/Index
         public async Task<ActionResult> Index(ManageMessageId? message)
-        {
+        {  
+            //testsasasas
             ViewBag.StatusMessage =
                 message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
                 : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
@@ -48,14 +51,19 @@ namespace FundRaiser.UI.Controllers
                 : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number was removed."
                 : "";
 
-            var model = new IndexViewModel
-            {
-                HasPassword = HasPassword(),
-                PhoneNumber = await UserManager.GetPhoneNumberAsync(User.Identity.GetUserId()),
-                TwoFactor = await UserManager.GetTwoFactorEnabledAsync(User.Identity.GetUserId()),
-                Logins = await UserManager.GetLoginsAsync(User.Identity.GetUserId()),
-                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(User.Identity.GetUserId())
-            };
+            var myClaims = ((ClaimsIdentity)(User.Identity)).Claims;
+            var name = myClaims.First(c => c.Type.Contains("name")).Value.ToString();
+            var role = myClaims.First(c => c.Type.Contains("role")).Value.ToString();               
+
+            var model = new IndexViewModel();
+            //var model = new IndexViewModel
+            //{
+            //    HasPassword = HasPassword(),
+           var  PhoneNumber = await UserManager.GetPhoneNumberAsync(User.Identity.GetUserId());
+            //    TwoFactor = await UserManager.GetTwoFactorEnabledAsync(User.Identity.GetUserId()),
+            //    Logins = await UserManager.GetLoginsAsync(User.Identity.GetUserId()),
+            //    BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(User.Identity.GetUserId())
+            //};
             return View(model);
         }
 

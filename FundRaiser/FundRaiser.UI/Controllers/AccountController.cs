@@ -365,7 +365,7 @@ namespace FundRaiser.UI.Controllers
 
                 identity.AddClaim(new Claim(ClaimTypes.Role, claims["role"]));
 
-                HttpContext.GetOwinContext().Authentication.SignIn(new AuthenticationProperties
+                AuthenticationManager.SignIn(new AuthenticationProperties
                 {
                     IsPersistent = false
                 }, identity);
