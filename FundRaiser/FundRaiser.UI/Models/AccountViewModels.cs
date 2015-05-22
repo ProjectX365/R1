@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity.Core.Metadata.Edm;
+using FundRaiser.Model;
 
 namespace FundRaiser.UI.Models
 {
@@ -79,6 +81,59 @@ namespace FundRaiser.UI.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
+        [Required]
+        [Display(Name = "Adress")]
+        public string Address { get; set; }
+
+        [Required]
+        [Display(Name = "Country")]
+        public string Country { get; set; }
+
+
+        [Required]
+        [Display(Name = "Register As*")]
+        public EntityTypes EntityType { get; set; }
+
+        [Required]
+        [Display(Name = "Refered By(Email)")]
+        public string ReferedBy { get; set; }
+
+        [Required]
+        public Information Information { get; set; }
+
+        private string imagePath;
+
+        public string ImagePath
+        {
+            get {
+
+                return "~/Content/images/ProfileTemplate.jpg";
+                //return (this.ImagePath != null) ? this.ImagePath : "~/Content/images/ProfileTemplate.jpg";
+            }
+            set { imagePath = value; }
+        }
+
+        //public string ImagePath
+        //{
+        //    get
+        //    {
+        //        return (this.ImagePath != null) ? this.ImagePath : "~/Content/images/ProfileTemplate.jpg";
+        //    }
+        //    set
+        //    {
+        //        ;
+        //    }
+        //}
+
     }
 
     public class ResetPasswordViewModel
@@ -108,5 +163,12 @@ namespace FundRaiser.UI.Models
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
+    }
+
+    public enum Information
+    {
+        NameWithAddress,
+        NameOnly,
+        Anonymous
     }
 }

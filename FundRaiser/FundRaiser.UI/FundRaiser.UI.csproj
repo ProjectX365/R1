@@ -178,6 +178,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\animated-overlay.gif" />
+    <Content Include="Content\images\ProfileTemplate.jpg" />
     <Content Include="Content\images\ui-bg_flat_55_999999_40x100.png" />
     <Content Include="Content\images\ui-bg_flat_75_aaaaaa_40x100.png" />
     <Content Include="Content\images\ui-bg_glass_45_0078ae_1x400.png" />

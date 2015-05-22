@@ -178,6 +178,17 @@ namespace FundRaiser.UI.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        public ActionResult Create(RegisterViewModel model, HttpPostedFileBase file)
+        {
+            //you can put your existing save code here
+            if (file != null && file.ContentLength > 0)
+            {
+                //do whatever you want with the file
+            }
+            return View(model);
+        }
+
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
